@@ -1,0 +1,76 @@
+
+Task Title: Build the Authentication Module for Your Final Project
+==================================================================
+
+📅 Session 6 Assignment
+
+🎯 Objective:
+-------------
+You will build the authentication system for your graduation project using the concepts you learned in this session:
+- Mongoose Models
+- Password hashing
+- JWT tokens
+- Route protection middleware
+- Modular folder structure
+
+📌 Requirements:
+----------------
+
+1. Choose the user type(s) relevant to your project
+---------------------------------------------------
+Your app might include roles like:
+- Admin
+- Doctor
+- Patient
+- Instructor / Student / Customer / Client...
+
+Your User model should contain relevant fields such as:
+- name, email, password, role, phone, etc.
+- You can add other fields that make sense for your project (e.g., gender, photo, age, etc.)
+
+2. Implement Authentication Features
+------------------------------------
+Create the following routes:
+- POST /signup → to register a new user and return a JWT token
+- POST /login → to authenticate and return a JWT token
+
+Use:
+- bcryptjs to hash passwords
+- jsonwebtoken to create tokens
+- express.json() to handle JSON requests
+
+3. Protect Private Routes
+--------------------------
+- Create a middleware function to protect specific routes (e.g. /profile, /dashboard, etc.)
+- The middleware should:
+  - Extract the token from the request headers
+  - Verify it
+  - Allow access if valid
+
+Add one example protected route of your choice, for example:
+- /users/profile
+- /admin/dashboard
+- /doctor/me
+
+4. Test Using Postman
+----------------------
+- Register a user and test the returned token
+- Login with correct and incorrect credentials
+- Use the token to access a protected route
+- Take screenshots of the process
+
+5. Submit Your Work
+--------------------
+- Push your code to a GitHub repo (can be a separate folder like auth-module, or inside your main project repo)
+- Include a README.md file with:
+  - What the module does
+  - Your chosen user roles
+  - Routes list + examples
+  - Instructions on how to run the code locally
+
+💡 Notes:
+---------
+- You can prepare to extend this module later by planning for things like:
+  - User photos (for next session with multer)
+  - Role-based access
+- Keep your code modular (routes, controllers, models...)

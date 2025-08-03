@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const User = require('../modules/user.module')
+const User = require('../models/user.model')
 require('dotenv').config();
 
 const connectDB = async () => {
@@ -15,7 +15,7 @@ const connectDB = async () => {
                 name: 'John Doe',
                 email: 'john.doe@example.com',
                 role: 'instructor',
-                password: 'Test123', // consider hashing!
+                password: 'Test123', 
             });
 
             await instructor.save();

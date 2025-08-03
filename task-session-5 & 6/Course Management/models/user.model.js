@@ -9,8 +9,14 @@ const userSchema = new mongoose.Schema({
     enum: ['student', 'instructor', 'admin'],
     default: 'student'
   },
-  password: { type: String, required: true },
-  createdAt: { type: Date, default: Date.now }
+  photo: { type: String },
+  password: {
+    type: String,
+    required: [true, "Password is Required"],
+    minlength: [8, "Minimum Length must be more than 8 characters"],
+  },
+  createdAt: { type: Date, default: Date.now },
+  favCourses: [{ type: mongoose.Schema.Types.ObjectId, ref: "Course" }],
 });
 
 userSchema.pre('save', async function (next) {

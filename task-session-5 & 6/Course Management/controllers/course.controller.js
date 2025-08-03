@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Course = require('../modules/course.module');
+const Course = require('../models/course.model');
 
 const createCourse = async (req, res) => {
     try {
